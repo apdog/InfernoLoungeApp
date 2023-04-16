@@ -1,7 +1,8 @@
-package com.example.infernolounge
+package com.example.infernolounge.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.infernolounge.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
