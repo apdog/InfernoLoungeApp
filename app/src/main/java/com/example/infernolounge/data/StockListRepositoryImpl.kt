@@ -1,5 +1,7 @@
 package com.example.infernolounge.data
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.infernolounge.R
 import com.example.infernolounge.domain.news.News
 import com.example.infernolounge.domain.stock.Stock
@@ -17,12 +19,17 @@ object StockListRepositoryImpl: StockListRepository {
         Stock(4, "Скидка 10% на кальяны", "Скидка на новые виды " +
                 "кальянов 10% только до 10 мая!", R.drawable.ic_percent),
     )
+    private val stockListLivedata = MutableLiveData<List<Stock>>()
 
-    override fun getStockList(): List<Stock> {
-        return stockList.toMutableList()
+    override fun getStockList(): LiveData<List<Stock>> {
+        return stockListLivedata
     }
 
     override fun shareStock(stock: Stock) {
         TODO("Not yet implemented")
+    }
+
+    private fun updateList(){
+        stockListLivedata.value = stockList.toList()
     }
 }
