@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 
 interface StockListRepository {
 
-    fun getStockList(): LiveData<List<Stock>>
+    fun getStockList(): LiveData<List<StockItem>>
 
-    fun shareStock(stock: Stock)
+    fun shareStock(stock: StockItem)
 
 }

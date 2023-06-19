@@ -1,15 +1,12 @@
 package com.example.infernolounge.presentation.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.infernolounge.data.NewsListRepositoryImpl
 import com.example.infernolounge.data.StockListRepositoryImpl
 import com.example.infernolounge.domain.news.GetNewsListUseCase
-import com.example.infernolounge.domain.news.News
 import com.example.infernolounge.domain.news.ShareNewsUseCase
 import com.example.infernolounge.domain.stock.GetStockListUseCase
 import com.example.infernolounge.domain.stock.ShareStockUseCase
-import com.example.infernolounge.domain.stock.Stock
 
 class MainViewModel : ViewModel() {
 

@@ -1,8 +1,11 @@
 package com.example.infernolounge.domain.stock
 
-data class Stock(
+import java.util.Date
+
+data class StockItem(
     val stockId: Int,
     val stockName: String,
     val stockDescription: String,
-    val stockImage: Int
+    val stockImage: Int,
+    val stockDate: Date
 )

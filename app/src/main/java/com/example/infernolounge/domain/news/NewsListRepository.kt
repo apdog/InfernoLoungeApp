@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 // для взаимодействия с дата слоем
 interface NewsListRepository {
 
-    fun getNewsList(): LiveData<List<News>>
+    fun getNewsList(): LiveData<List<NewsItem>>
 
-    fun shareNews(news: News)
+    fun shareNews(news: NewsItem)
 
 }
