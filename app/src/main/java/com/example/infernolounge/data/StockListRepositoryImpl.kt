@@ -9,17 +9,16 @@ import java.util.Date
 
 object StockListRepositoryImpl: StockListRepository {
 
-
     private val stockListLivedata = MutableLiveData<List<StockItem>>()
 
     private val stockList = mutableListOf(StockItem(1, "Скидка 10% на кальяны", "Скидка на новые виды " +
-            "кальянов 10% только до 10 мая!", R.drawable.ic_percent, Date()),
+            "кальянов 10% только до 10 мая!", R.drawable.stock_custom_image, Date()),
         StockItem(2, "Скидка 10% на кальяны", "Скидка на новые виды " +
-                "кальянов 10% только до 10 мая!", R.drawable.ic_percent, Date()),
+                "кальянов 10% только до 10 мая!", R.drawable.stock_custom_image, Date()),
         StockItem(3, "Скидка 10% на кальяны", "Скидка на новые виды " +
-                "кальянов 10% только до 10 мая!", R.drawable.ic_percent, Date()),
+                "кальянов 10% только до 10 мая!", R.drawable.stock_custom_image, Date()),
         StockItem(4, "Скидка 10% на кальяны", "Скидка на новые виды " +
-                "кальянов 10% только до 10 мая!", R.drawable.ic_percent, Date()))
+                "кальянов 10% только до 10 мая!", R.drawable.stock_custom_image, Date()))
 
 
     override fun getStockList(): LiveData<List<StockItem>> {
