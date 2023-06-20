@@ -63,7 +63,11 @@ class ProgressWheel : View {
         init(attrs, 0)
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle) {
+    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(
+        context,
+        attrs,
+        defStyle
+    ) {
         init(attrs, defStyle)
     }
 
@@ -117,22 +121,25 @@ class ProgressWheel : View {
             paddingLeft + mBarWidth,
             paddingTop + mBarWidth,
             width.toFloat() - paddingRight.toFloat() - mBarWidth,
-            height.toFloat() - paddingBottom.toFloat() - mBarWidth)
+            height.toFloat() - paddingBottom.toFloat() - mBarWidth
+        )
 
         mProgressBounds = RectF(
             paddingLeft + mBarWidth,
             paddingTop + mBarWidth,
             width.toFloat() - paddingRight.toFloat() - mBarWidth,
-            height.toFloat() - paddingBottom.toFloat() - mBarWidth)
+            height.toFloat() - paddingBottom.toFloat() - mBarWidth
+        )
 
         // Count number text
         mCountTextPaint.textSize = mCountTextSize
         val fontMetrics = mCountTextPaint.fontMetrics
         mCountTextHeight = fontMetrics.bottom
-        mCountTextWidth = mCountTextPaint.measureText(if (mCountText == null || mCountText!!.isEmpty()) " " else mCountText)
+        mCountTextWidth =
+            mCountTextPaint.measureText(if (mCountText == null || mCountText!!.isEmpty()) " " else mCountText)
 
         // Definition text
-        if (mDefText != null){
+        if (mDefText != null) {
             mDefTextPaint.textSize = mDefTextSize
             val fontDefMetrics = mDefTextPaint.fontMetrics
             mDefTextHeight = fontDefMetrics.bottom
@@ -143,7 +150,8 @@ class ProgressWheel : View {
     private fun init(attrs: AttributeSet?, defStyle: Int) {
         // Load attributes
         val a = context.obtainStyledAttributes(
-            attrs, R.styleable.ProgressWheel, defStyle, 0)
+            attrs, R.styleable.ProgressWheel, defStyle, 0
+        )
 
         if (a.hasValue(R.styleable.ProgressWheel_countText))
             mCountText = a.getString(R.styleable.ProgressWheel_countText)
@@ -176,19 +184,21 @@ class ProgressWheel : View {
         canvas.drawArc(mRimBounds, 0f, 360f, false, mCirclePaint)
         canvas.drawArc(mProgressBounds, -90f, mPercentage.toFloat(), false, mBarPaint)
 
-        if (mCountText != null){
+        if (mCountText != null) {
             val horizontalCountTextOffset = mCountTextPaint.measureText(mCountText) / 2
-            canvas.drawText(mCountText!!,
+            canvas.drawText(
+                mCountText!!,
                 this.width / 2 - horizontalCountTextOffset,
-                (this.height / 2).toFloat() + if (mDefText == null) mCountTextSize/3 else 0f,
+                (this.height / 2).toFloat() + if (mDefText == null) mCountTextSize / 3 else 0f,
                 mCountTextPaint
             )
         }
 
 
-        if (mDefText != null){
+        if (mDefText != null) {
             val horizontalDefTextOffset = mDefTextPaint.measureText(mDefText) / 2
-            canvas.drawText(mDefText!!,
+            canvas.drawText(
+                mDefText!!,
                 this.width / 2 - horizontalDefTextOffset,
                 (this.height / 2).toFloat() + mCountTextHeight + mMarginBtwTexts,
                 mDefTextPaint
@@ -207,7 +217,7 @@ class ProgressWheel : View {
         invalidate()
     }
 
-    fun setProgressColor(color: Int){
+    fun setProgressColor(color: Int) {
         mProgressColor = color
         invalidate()
     }

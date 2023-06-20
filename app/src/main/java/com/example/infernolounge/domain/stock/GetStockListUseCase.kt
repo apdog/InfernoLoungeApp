@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 
 class GetStockListUseCase(private val stockListRepository: StockListRepository) {
 
-    fun getStockList(): LiveData<List<StockItem>>{
+    fun getStockList(): LiveData<List<StockItem>> {
         return stockListRepository.getStockList()
     }
 

@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 // получение списка новостей
 class GetNewsListUseCase(private val newsListRepository: NewsListRepository) {
 
-    fun getNewsList(): LiveData<List<NewsItem>>{
+    fun getNewsList(): LiveData<List<NewsItem>> {
         return newsListRepository.getNewsList()
     }
 

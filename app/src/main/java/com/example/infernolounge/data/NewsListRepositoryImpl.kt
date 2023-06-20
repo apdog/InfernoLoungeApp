@@ -7,26 +7,46 @@ import com.example.infernolounge.domain.news.NewsItem
 import com.example.infernolounge.domain.news.NewsListRepository
 import java.util.Date
 
-object NewsListRepositoryImpl: NewsListRepository {
+object NewsListRepositoryImpl : NewsListRepository {
 
     private val newsListLivedata = MutableLiveData<List<NewsItem>>()
 
     private val newsList = mutableListOf(
-        NewsItem(1, "Новость", "А мы приготовили для Вас новые акции, конечно, не забыв и про старые.\n" +
-                "\n" +
-                "Недорого и отлично провести вечер - это в Inferno lounge", R.drawable.news_food, Date()
+        NewsItem(
+            1,
+            "Новость",
+            "А мы приготовили для Вас новые акции, конечно, не забыв и про старые.\n" +
+                    "\n" +
+                    "Недорого и отлично провести вечер - это в Inferno lounge",
+            R.drawable.news_food,
+            Date()
         ),
-        NewsItem(2, "Новость", "А мы приготовили для Вас новые акции, конечно, не забыв и про старые.\n" +
-                "\n" +
-                "Недорого и отлично провести вечер - это в Inferno lounge", R.drawable.news_food, Date()
+        NewsItem(
+            2,
+            "Новость",
+            "А мы приготовили для Вас новые акции, конечно, не забыв и про старые.\n" +
+                    "\n" +
+                    "Недорого и отлично провести вечер - это в Inferno lounge",
+            R.drawable.news_food,
+            Date()
         ),
-        NewsItem(3, "Новость", "А мы приготовили для Вас новые акции, конечно, не забыв и про старые.\n" +
-                "\n" +
-                "Недорого и отлично провести вечер - это в Inferno lounge", R.drawable.news_food, Date()
+        NewsItem(
+            3,
+            "Новость",
+            "А мы приготовили для Вас новые акции, конечно, не забыв и про старые.\n" +
+                    "\n" +
+                    "Недорого и отлично провести вечер - это в Inferno lounge",
+            R.drawable.news_food,
+            Date()
         ),
-        NewsItem(4, "Новость", "А мы приготовили для Вас новые акции, конечно, не забыв и про старые.\n" +
-                "\n" +
-                "Недорого и отлично провести вечер - это в Inferno lounge", R.drawable.news_food, Date()
+        NewsItem(
+            4,
+            "Новость",
+            "А мы приготовили для Вас новые акции, конечно, не забыв и про старые.\n" +
+                    "\n" +
+                    "Недорого и отлично провести вечер - это в Inferno lounge",
+            R.drawable.news_food,
+            Date()
         )
     )
 
@@ -40,7 +60,7 @@ object NewsListRepositoryImpl: NewsListRepository {
         TODO("Not yet implemented")
     }
 
-    private fun updateList(){
-       newsListLivedata.value = newsList.toMutableList()
+    private fun updateList() {
+        newsListLivedata.value = newsList.toMutableList()
     }
 }

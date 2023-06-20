@@ -7,18 +7,28 @@ import com.example.infernolounge.domain.stock.StockItem
 import com.example.infernolounge.domain.stock.StockListRepository
 import java.util.Date
 
-object StockListRepositoryImpl: StockListRepository {
+object StockListRepositoryImpl : StockListRepository {
 
     private val stockListLivedata = MutableLiveData<List<StockItem>>()
 
-    private val stockList = mutableListOf(StockItem(1, "Скидка 10% на кальяны", "Скидка на новые виды " +
-            "кальянов 10% только до 10 мая!", R.drawable.stock_custom_image, Date()),
-        StockItem(2, "Скидка 10% на кальяны", "Скидка на новые виды " +
-                "кальянов 10% только до 10 мая!", R.drawable.stock_custom_image, Date()),
-        StockItem(3, "Скидка 10% на кальяны", "Скидка на новые виды " +
-                "кальянов 10% только до 10 мая!", R.drawable.stock_custom_image, Date()),
-        StockItem(4, "Скидка 10% на кальяны", "Скидка на новые виды " +
-                "кальянов 10% только до 10 мая!", R.drawable.stock_custom_image, Date()))
+    private val stockList = mutableListOf(
+        StockItem(
+            1, "Скидка 10% на кальяны", "Скидка на новые виды " +
+                    "кальянов 10% только до 10 мая!", R.drawable.stock_custom_image, Date()
+        ),
+        StockItem(
+            2, "Скидка 10% на кальяны", "Скидка на новые виды " +
+                    "кальянов 10% только до 10 мая!", R.drawable.stock_custom_image, Date()
+        ),
+        StockItem(
+            3, "Скидка 10% на кальяны", "Скидка на новые виды " +
+                    "кальянов 10% только до 10 мая!", R.drawable.stock_custom_image, Date()
+        ),
+        StockItem(
+            4, "Скидка 10% на кальяны", "Скидка на новые виды " +
+                    "кальянов 10% только до 10 мая!", R.drawable.stock_custom_image, Date()
+        )
+    )
 
 
     override fun getStockList(): LiveData<List<StockItem>> {
@@ -30,7 +40,7 @@ object StockListRepositoryImpl: StockListRepository {
         TODO("Not yet implemented")
     }
 
-    private fun updateList(){
+    private fun updateList() {
         stockListLivedata.value = stockList.toMutableList()
     }
 }

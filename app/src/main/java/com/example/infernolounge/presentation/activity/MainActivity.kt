@@ -1,8 +1,8 @@
 package com.example.infernolounge.presentation.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.infernolounge.R
@@ -18,11 +18,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
-        viewModel.newsList.observe(this){
-            newsListAdapter.newsList = it
+        viewModel.newsList.observe(this) {
+            newsListAdapter.submitList(it)
         }
-        viewModel.stockList.observe(this){
-            stockListAdapter.stockList = it
+        viewModel.stockList.observe(this) {
+            stockListAdapter.submitList(it)
         }
         setupStockListRecyclerView()
         setupNewsListRecyclerView()
