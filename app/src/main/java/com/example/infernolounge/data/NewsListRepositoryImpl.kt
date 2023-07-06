@@ -63,4 +63,10 @@ object NewsListRepositoryImpl : NewsListRepository {
     private fun updateList() {
         newsListLivedata.value = newsList.toMutableList()
     }
+
+    override fun getNewsItemId(newsItemId: Int): NewsItem {
+        return newsList.find {
+            it.newsId == newsItemId
+        } ?: throw RuntimeException("Element with id $newsItemId not found")
+    }
 }

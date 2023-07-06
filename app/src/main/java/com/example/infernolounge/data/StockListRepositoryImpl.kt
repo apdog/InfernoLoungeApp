@@ -3,6 +3,7 @@ package com.example.infernolounge.data
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.infernolounge.R
+import com.example.infernolounge.domain.news.NewsItem
 import com.example.infernolounge.domain.stock.StockItem
 import com.example.infernolounge.domain.stock.StockListRepository
 import java.util.Date
@@ -42,5 +43,11 @@ object StockListRepositoryImpl : StockListRepository {
 
     private fun updateList() {
         stockListLivedata.value = stockList.toMutableList()
+    }
+
+    override fun getStockItemId(stockItemId: Int): StockItem {
+        return StockListRepositoryImpl.stockList.find {
+            it.stockId == stockItemId
+        } ?: throw RuntimeException("Element with id $stockItemId not found")
     }
 }

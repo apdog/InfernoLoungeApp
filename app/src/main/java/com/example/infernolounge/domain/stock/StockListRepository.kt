@@ -8,4 +8,6 @@ interface StockListRepository {
 
     fun shareStock(stock: StockItem)
 
+    fun getStockItemId(stockItemId: Int): StockItem
+
 }

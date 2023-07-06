@@ -9,4 +9,6 @@ interface NewsListRepository {
 
     fun shareNews(news: NewsItem)
 
+    fun getNewsItemId(newsItemId: Int): NewsItem
+
 }
