@@ -1,7 +1,6 @@
 package com.example.infernolounge.presentation.activity
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
@@ -39,7 +38,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupStockClickListener() {
         stockListAdapter.onStockItemClickListener = {
-            Toast.makeText(this, it.stockName, Toast.LENGTH_SHORT).show()
+            val intent = StockItemActivity.stockIntentShowItem(this, it.stockId)
+            startActivity(intent)
         }
     }
 
@@ -54,7 +54,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupNewsClickListener() {
         newsListAdapter.onNewsItemClickListener = {
-            Toast.makeText(this, it.newsName, Toast.LENGTH_SHORT).show()
+            val intent = NewsItemActivity.newsIntentShowItem(this, it.newsId)
+            startActivity(intent)
         }
     }
 }
