@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupStockListRecyclerView() {
-        val rvStockList = findViewById<RecyclerView>(R.id.rv_stock_list)
+        val rvStockList = findViewById<RecyclerView>(R.id.recycler_view_stock_list)
         with(rvStockList) {
             stockListAdapter = StockListAdapter()
             adapter = stockListAdapter
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupNewsListRecyclerView() {
-        val rvNewsList = findViewById<RecyclerView>(R.id.rv_news_list)
+        val rvNewsList = findViewById<RecyclerView>(R.id.recycler_view_news_list)
         with(rvNewsList) {
             newsListAdapter = NewsListAdapter()
             adapter = newsListAdapter

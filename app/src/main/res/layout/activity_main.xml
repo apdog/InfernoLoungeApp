@@ -8,54 +8,59 @@
 
     <ImageView
         android:id="@+id/main_activity_logo"
-        android:layout_width="118dp"
-        android:layout_height="118dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="-22dp"
+        android:layout_width="@dimen/main_activity_logo_size"
+        android:layout_height="@dimen/main_activity_logo_size"
+        android:layout_marginStart="@dimen/main_activity_logo_margin_start_size"
+        android:layout_marginTop="@dimen/main_activity_logo_margin_top_size"
+        android:importantForAccessibility="no"
         android:src="@drawable/logo_black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VisualLintBounds" />
 
     <TextView
-        android:id="@+id/user_name"
+        android:id="@+id/main_activity_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="@dimen/main_activity_user_name_margin_top_size"
+        android:layout_marginEnd="@dimen/main_activity_user_name_margin_end_size"
         android:fontFamily="@font/metropolis_bold"
-        android:text="Андрей"
+        android:text="@string/user_name_example"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="@dimen/main_activity_user_name_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/ruble"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="24dp"
-        android:src="@drawable/ruble"
+        android:id="@+id/main_activity_image_view_bonus_ruble"
+        android:layout_width="@dimen/main_activity_image_view_bonus_ruble_size"
+        android:layout_height="@dimen/main_activity_image_view_bonus_ruble_size"
+        android:layout_marginEnd="@dimen/main_activity_image_view_bonus_ruble_margin_end_size"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ruble_bonus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_name" />
+        app:layout_constraintTop_toBottomOf="@id/main_activity_user_name" />
 
     <TextView
+        android:id="@+id/main_activity_text_view_bonus_ruble"
         android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="4dp"
+        android:layout_height="@dimen/main_activity_text_view_bonus_ruble_height"
+        android:layout_marginTop="@dimen/main_activity_text_view_bonus_ruble_margin_top_size"
+        android:layout_marginEnd="@dimen/main_activity_text_view_bonus_ruble_margin_end_size"
         android:fontFamily="@font/metropolis_semi_bold"
-        android:text="355"
+        android:text="@string/text_view_bonus_example"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@id/ruble"
-        app:layout_constraintTop_toBottomOf="@id/user_name" />
+        android:textSize="@dimen/main_activity_text_view_bonus_ruble_text_size"
+        app:layout_constraintEnd_toStartOf="@id/main_activity_image_view_bonus_ruble"
+        app:layout_constraintTop_toBottomOf="@id/main_activity_user_name"
+        tools:ignore="TextSizeCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_stock_list"
+        android:id="@+id/recycler_view_stock_list"
         android:layout_width="wrap_content"
-        android:layout_height="168dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="-20dp"
+        android:layout_height="@dimen/recycler_view_stock_list_height"
+        android:layout_marginStart="@dimen/recycler_view_stock_list_margin_start_size"
+        android:layout_marginTop="@dimen/recycler_view_stock_list_margin_top_size"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,122 +69,98 @@
         tools:listitem="@layout/item_stock" />
 
     <TextView
-        android:id="@+id/title_bonus_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:fontFamily="@font/metropolis_regular"
-        android:text="Новости"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintStart_toStartOf="@+id/rv_news_list"
-        app:layout_constraintTop_toBottomOf="@id/bonus_card" />
-
-    <TextView
-        android:id="@+id/title_bonus_hookah"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:fontFamily="@font/metropolis_regular"
-        android:text="Новости"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintStart_toStartOf="@+id/rv_news_list"
-        app:layout_constraintTop_toBottomOf="@id/bonus_card" />
-
-    <TextView
-        android:id="@+id/textView"
+        android:id="@+id/main_activity_text_view_to_free_hookah"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/metropolis_bold"
-        android:padding="8dp"
-        android:text="До бесплатного кальяна \nосталось:"
+        android:padding="@dimen/main_activity_text_view_to_free_hookah_padding"
+        android:text="@string/text_to_free_hookah"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/title_bonus_card"
-        app:layout_constraintEnd_toStartOf="@+id/wheel_progress_of_hookah_bonus"
-        app:layout_constraintStart_toEndOf="@id/bonus_card"
-        app:layout_constraintTop_toBottomOf="@id/rv_stock_list" />
+        android:textSize="@dimen/main_activity_text_view_to_free_hookah_size"
+        app:layout_constraintBottom_toTopOf="@+id/main_activity_title_news"
+        app:layout_constraintEnd_toStartOf="@+id/main_activity_wheel_progress_of_hookah_bonus"
+        app:layout_constraintStart_toEndOf="@id/main_activity_bonus_card"
+        app:layout_constraintTop_toBottomOf="@id/recycler_view_stock_list" />
 
 
     <ImageView
-        android:id="@+id/bonus_card"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="12dp"
+        android:id="@+id/main_activity_bonus_card"
+        android:layout_width="@dimen/main_activity_bonus_card_width"
+        android:layout_height="@dimen/main_activity_bonus_card_height"
+        android:layout_marginStart="@dimen/main_activity_bonus_card_margin_start_size"
         android:clickable="true"
-        android:padding="12dp"
-        android:src="@drawable/qr_bonus_card"
+        android:importantForAccessibility="no"
+        android:padding="@dimen/main_activity_bonus_card_padding_size"
+        android:src="@drawable/bonus_card"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_stock_list" />
+        app:layout_constraintTop_toBottomOf="@id/recycler_view_stock_list" />
 
     <TextView
-        android:id="@+id/title_news"
+        android:id="@+id/main_activity_title_news"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="@dimen/main_activity_title_news_margin_start_size"
         android:fontFamily="@font/metropolis_regular"
-        android:text="Новости"
+        android:text="@string/main_activity_title_news_text"
         android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintStart_toStartOf="@+id/rv_news_list"
-        app:layout_constraintTop_toBottomOf="@id/bonus_card" />
+        android:textSize="@dimen/main_activity_title_news_text_size"
+        app:layout_constraintEnd_toStartOf="@+id/main_activity_guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/recycler_view_news_list"
+        app:layout_constraintTop_toBottomOf="@id/main_activity_bonus_card" />
 
     <com.example.infernolounge.ProgressWheel
-        android:id="@+id/wheel_progress_of_hookah_bonus"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="17dp"
+        android:id="@+id/main_activity_wheel_progress_of_hookah_bonus"
+        android:layout_width="@dimen/main_activity_wheel_progress_of_hookah_bonus_size"
+        android:layout_height="@dimen/main_activity_wheel_progress_of_hookah_bonus_size"
+        android:layout_marginEnd="@dimen/main_activity_wheel_progress_of_hookah_bonus_margin_end_size"
         android:clickable="true"
-        app:barWidth="15dp"
-        app:countText="6"
+        app:barWidth="@dimen/main_activity_wheel_progress_of_hookah_bonus_bar_width_size"
+        app:countText="@string/main_activity_wheel_progress_of_hookah_bonus_count_text"
         app:countTextColor="@android:color/black"
-        app:countTextSize="36sp"
+        app:countTextSize="@dimen/main_activity_wheel_progress_of_hookah_bonus_text_size"
         app:defTextColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/title_bonus_card"
+        app:layout_constraintBottom_toTopOf="@+id/main_activity_title_news"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_stock_list"
-        app:marginBtwText="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view_stock_list"
+        app:marginBtwText="@dimen/main_activity_wheel_progress_of_hookah_bonus_margin_btw_text_size"
         app:percentage="90"
-        app:progressColor="#64b324" />
+        app:progressColor="@color/progress_color_of_wheel_bonus"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_news_list"
+        android:id="@+id/recycler_view_news_list"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/recycler_view_news_list_margin_top_size"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_news"
+        app:layout_constraintTop_toBottomOf="@id/main_activity_title_news"
         tools:listitem="@layout/item_news" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_end"
+        android:id="@+id/main_activity_guideline_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="24dp" />
+        app:layout_constraintGuide_end="@dimen/main_activity_guideline_size" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_begin"
+        android:id="@+id/main_activity_guideline_begin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="24dp" />
+        app:layout_constraintGuide_begin="@dimen/main_activity_guideline_size" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_top"
+        android:id="@+id/main_activity_guideline_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="24dp" />
+        app:layout_constraintGuide_begin="@dimen/main_activity_guideline_size" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
