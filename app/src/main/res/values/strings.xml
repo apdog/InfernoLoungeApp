@@ -53,4 +53,6 @@
     <string name="main_activity_title_bonus_hookah_text">Новости</string>
     <string name="text_to_free_hookah">До бесплатного кальяна \nосталось:</string>
     <string name="main_activity_wheel_progress_of_hookah_bonus_count_text">6</string>
+    <string name="news_title_text">Название новости</string>
+    <string name="news_description_text">Описание новости. рколр ыукаолр ыору а ыра гыр лрг ылр лр у</string>
 </resources>

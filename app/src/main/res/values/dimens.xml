@@ -44,4 +44,21 @@
     <dimen name="main_activity_wheel_progress_of_hookah_bonus_margin_btw_text_size">15dp</dimen>
     <dimen name="recycler_view_news_list_margin_top_size">12dp</dimen>
     <dimen name="main_activity_guideline_size">24dp</dimen>
+    <dimen name="stock_item_width_size">300dp</dimen>
+    <dimen name="stock_item_height_size">168dp</dimen>
+    <dimen name="stock_item_card_view_radius">16dp</dimen>
+    <dimen name="stock_item_elevation_size">4dp</dimen>
+    <dimen name="news_item_width_size">344dp</dimen>
+    <dimen name="news_item_height_size">120dp</dimen>
+    <dimen name="news_item_elevation_size">8dp</dimen>
+    <dimen name="image_news_place_width_size">150dp</dimen>
+    <dimen name="image_news_place_margin_size">4dp</dimen>
+    <dimen name="news_name_width">230dp</dimen>
+    <dimen name="news_name_margin_start">8dp</dimen>
+    <dimen name="news_name_margin_top">8dp</dimen>
+    <dimen name="news_name_text_size">12sp</dimen>
+    <dimen name="news_description_margin_start">8dp</dimen>
+    <dimen name="news_description_margin_top">8dp</dimen>
+    <dimen name="news_description_margin_bottom">8dp</dimen>
+    <dimen name="news_description_text_size">12sp</dimen>
 </resources>
